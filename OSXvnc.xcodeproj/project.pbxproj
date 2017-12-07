@@ -821,6 +821,7 @@
 				CODE_SIGN_IDENTITY = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				"OTHER_LDFLAGS[arch=*]" = abc;
 				PRODUCT_NAME = "Vine Server Package";
 				SDKROOT = macosx;
 			};
@@ -832,6 +833,7 @@
 				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				"OTHER_LDFLAGS[arch=*]" = abc;
 				PRODUCT_NAME = "Vine Server Package";
 				SDKROOT = macosx;
 			};
@@ -876,6 +878,12 @@
 					libjpeg,
 				);
 				LIBRARY_SEARCH_PATHS = "/opt/libjpeg-turbo/lib";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"\"-sectcreate\"",
+					__CGPreLoginApp,
+					__cgpreloginapp,
+					/dev/null,
+				);
 				PRODUCT_NAME = "OSXvnc-server";
 				PROVISIONING_PROFILE = "";
 			};
@@ -894,6 +902,10 @@
 				);
 				LIBRARY_SEARCH_PATHS = "/opt/libjpeg-turbo/lib";
 				MACH_O_TYPE = mh_execute;
+				"OTHER_LDFLAGS[arch=*]" = (
+					unused,
+					apparently,
+				);
 				PRODUCT_NAME = "OSXvnc-server";
 				PROVISIONING_PROFILE = "";
 				STRIP_INSTALLED_PRODUCT = NO;

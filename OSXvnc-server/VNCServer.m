@@ -751,8 +751,8 @@ bool isConsoleSession() {
 - (void) sendKeyEvent: (CGKeyCode) keyCode down: (BOOL) down modifiers: (CGEventFlags) modifiersToSend {
     if (!vncSourceRef) {
         CGEventRef event = CGEventCreateKeyboardEvent(NULL, keyCode, down);
-        CGEventPost(vncTapLocation, event);
-        //CGPostKeyboardEvent(0, keyCode, down);
+        //CGEventPost(vncTapLocation, event);
+        CGPostKeyboardEvent(0, keyCode, down);
     }
     else {
         CGEventRef event = CGEventCreateKeyboardEvent(vncSourceRef, keyCode, down);
